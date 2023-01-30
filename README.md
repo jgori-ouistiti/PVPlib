@@ -5,7 +5,7 @@
 
 
 This library allows you to easily compute and plot PVPs in 1, 2 and 3 dimensions.
-The theory behind PVPs is explained in [1]. 
+The theory behind PVPs is explained in [1] and [2]. 
 
 ## Installing PVPlib
 
@@ -58,3 +58,5 @@ pvp.plot_std_profiles(ax, fit=True)
 
 
 [1] Gori, J., & Rioul, O. (2020). A feedback information-theoretic transmission scheme (FITTS) for modeling trajectory variability in aimed movements. Biological Cybernetics, 114(6), 621-641.
+
+[2] Gori, J., and Bellut, Q. (2023, April, to appear). Positional Variance Profiles (PVPs): A New Take on the Speed-Accuracy Tradeoff. In Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems.
