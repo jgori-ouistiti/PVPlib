@@ -18,20 +18,7 @@ The library can be installed directly with pip:
     python3 -m pip install pvplib
 
 
-.. note::
-
-    During the submission process, the package is actually not available on PyPI but on  `testPyPI <https://test.pypi.org/project/pvplib/0.1.0/>`_, to not pollute PyPI with a temporary package (needed to preserve anonymity). You can install directly from testPypi like so:
-    
-    .. code-block:: bash
-
-        python -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple pvplib
-    
-    
-     Please don't go through the various meta files (setups, configs etc. We have tried to preserve our anonymity but it is easy to forget something since there are so many accounts etc. involved.)
-
-
-
-Alternatively, you can also build it using `poetry <https://python-poetry.org/>`_
+Alternatively, you can also downlaod the source and build it using `poetry <https://python-poetry.org/>`_
 
 .. code-block:: bash
 
