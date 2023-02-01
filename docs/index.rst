@@ -68,7 +68,7 @@ and plot the results, together with the spline fit with
 
 .. [1] Gori, J., & Rioul, O. (2020). A feedback information-theoretic transmission scheme (FITTS) for modeling trajectory variability in aimed movements. Biological Cybernetics, 114(6), 621-641.
 
-.. [2] CHI 7893 submission
+.. [2] Gori, J., and Bellut, Q. (2023, April, to appear). Positional Variance Profiles (PVPs): A New Take on the Speed-Accuracy Tradeoff. In Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems.
 
    
 .. toctree::
@@ -83,7 +83,7 @@ and plot the results, together with the spline fit with
 Known Caveats
 =====================
 
-Currently, the library only handles dimensions up to 3-D. The existing code is fully compatible with any N dimension, except for a single method. However, because it is unclear why a N > 3 PVP would be useful, I haven't generalized the method yet. You can open a feature request on Github if you need and N-D version.
+Currently, the library only handles dimensions up to 3-D. The existing code is fully compatible with any N dimension, except for a single method. However, because it is unclear why an N > 3 PVP would be useful, I haven't generalized the method yet. You can open a feature request on GitHub if you need an N-D version.
 
 
 Indices
