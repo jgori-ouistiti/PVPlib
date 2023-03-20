@@ -3,13 +3,12 @@ import sys
 import copy
 import json
 
-sys.path.append("/home/juliengori/Documents/VC/pvplib/pvplib")
 
 from pvplib import PVP_alpha, PVP_total, PVP_generalized, __version__
 
 
 def test_version():
-    assert __version__ == "0.3.0-dev0"
+    assert __version__ == "0.3.1-dev0"
 
 
 TEST_DATA_PATH = "tests/23714_fusion.json"
