@@ -8,7 +8,7 @@ from pvplib import PVP_alpha, PVP_total, PVP_generalized, __version__
 
 
 def test_version():
-    assert __version__ == "0.3.2-dev0"
+    assert __version__ == "0.3.2"
 
 
 TEST_DATA_PATH = "tests/23714_fusion.json"
