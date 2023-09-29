@@ -15,11 +15,11 @@ install_requires = \
 
 setup_kwargs = {
     'name': 'pvplib',
-    'version': '0.3.0.dev0',
+    'version': '0.3.2.dev0',
     'description': 'Library to compute PVPs per https://arxiv.org/pdf/1804.05021.pdf',
     'long_description': None,
-    'author': 'anonymous',
-    'author_email': 'chisub7893@gmail.com',
+    'author': 'Julien Gori',
+    'author_email': 'juliengori@gmail.com',
     'maintainer': None,
     'maintainer_email': None,
     'url': None,

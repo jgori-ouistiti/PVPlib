@@ -331,7 +331,7 @@ class PVP:
             )
         return self._kinematic_profile
 
-    def _find_start(self, container, method="speed_threshold", **kwargs):
+    def _correct_edges(self, container, method="speed_threshold", edges = ['start', 'stop'], thresholds = [1,5], **kwargs):
         """_find_start correct start
 
         Trajectories may not always be consistently segmented. This function performs a correction for the start point, as indicated by the method.
@@ -350,22 +350,37 @@ class PVP:
         time, traj, speed = container
 
         indx = 1
+        stp_index = len(traj)-1
         if method == "speed_threshold":
             ### Removes points until having reached a speed that is 1% of the max speed.
             max_speed = numpy.max(numpy.abs(speed[1:]))
-            percent = kwargs.get("percent", 1)
-            while abs(speed[indx]) < max_speed * percent / 100:
-                indx += 1
+
+            if 'start' in edges:
+                percent = thresholds[0]
+                while abs(speed[indx]) < max_speed * percent / 100:
+                    indx += 1
+            if 'stop' in edges:
+                try:
+                    percent = thresholds[1]
+                except IndexError:
+                    percent = thresholds[0]
+                
+                while abs(speed[stp_index]) < max_speed * percent / 100: # find first bump
+                    stp_index -= 1
+                while abs(speed[stp_index]) > max_speed * percent / 100: # find start of decrease
+                    stp_index -= 1 
+
+
         else:
             raise NotImplementedError(
                 "Only method speed_threshold is implemented for now."
             )
 
         container = numpy.concatenate(
-            (time[indx:].reshape(1, -1), traj[indx:].reshape(1, -1)), axis=0
+            (time[indx:stp_index].reshape(1, -1), traj[indx:stp_index].reshape(1, -1)), axis=0
         )
-        container = numpy.concatenate((container, speed[indx:].reshape(1, -1)), axis=0)
-        return container, indx
+        container = numpy.concatenate((container, speed[indx:stp_index].reshape(1, -1)), axis=0)
+        return container, indx, stp_index
 
     def plot_kinematic_profiles(self, ax=None, **kwargs):
         """plot_kinematic_profiles
@@ -387,7 +402,7 @@ class PVP:
                 ax[k].set_xlabel("Time (s)")
                 ax[k].set_ylabel("Position")
 
-    def add_trajectory(self, t, *args, extend_to=3, target=None, correct_start=False):
+    def add_trajectory(self, t, *args, extend_to=3, target=None, correct_edges=False, correct_edges_kwargs = None):
         """Add trajectory to the set from which PVPs are computed
 
         Pass the time series, and any number of positional series. For example in dim3 with x, y, z, you would call (with defaults kwargs)
@@ -410,6 +425,11 @@ class PVP:
         :type correct_start: bool, optional
         """
 
+        default_correct_edges_kwargs = dict(method="speed_threshold", edges = ['start'], percent=[2, 5])
+        if correct_edges_kwargs is not None:
+            default_correct_edges_kwargs.update(correct_edges_kwargs)
+
+
         target = [0 for i in args] if target is None else target
         projections = self._project(target, *args)
 
@@ -421,7 +441,7 @@ class PVP:
         )
 
         indx = 0
-        if correct_start:
+        if correct_edges:
             _norm = numpy.sqrt(numpy.sum(container[1, :, :] ** 2, axis=1))
             tmp_container = self._interp_filt(
                 container[0, :, 0],
@@ -429,10 +449,10 @@ class PVP:
                 deriv=1,
                 resampling_period=self.sampling_period,
             )
-            _, indx = self._find_start(
-                tmp_container, method="speed_threshold", percent=2
+            _, indx, stp_indx = self._correct_edges(
+                tmp_container, **default_correct_edges_kwargs
             )
-        container = container[:, indx:, :]
+        container = container[:, indx:stp_indx, :]
 
         self._extend(container[1, :, :], extend_to)
 
