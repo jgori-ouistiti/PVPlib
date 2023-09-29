@@ -6,7 +6,7 @@ from pvplib import PVP_alpha, PVP_total, PVP_generalized, __version__
 
 
 def test_version():
-    assert __version__ == "0.3.1"
+    assert __version__ == "0.3.2-dev0"
 
 
 TEST_DATA_PATH = "tests/sample_data_PPD.csv"
@@ -29,7 +29,7 @@ def PVP_1D_add_trajectory():
                     ):  # use both left-to-right and right-to-left movements without changing origin, hack for the PDdataset
                         x = [-_x for _x in x]
                     pvp.add_trajectory(
-                        t, x, target=[xT], extend_to=3, correct_start=False
+                        t, x, target=[xT], extend_to=3, correct_edges=True
                     )
                 except NameError:  # t,x,y have not been defined yet
                     pass

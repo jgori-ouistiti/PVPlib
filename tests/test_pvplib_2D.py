@@ -8,7 +8,7 @@ from pvplib import PVP_alpha, PVP_total, PVP_generalized, __version__
 
 
 def test_version():
-    assert __version__ == "0.3.1"
+    assert __version__ == "0.3.2-dev0"
 
 
 TEST_DATA_PATH = "tests/23714_fusion.json"
@@ -38,7 +38,7 @@ def PVP_2D_add_trajectory():
                 # exit()
                 pass
             pvp.add_trajectory(
-                t, x, y, target=[xT, yT], extend_to=3, correct_start=True
+                t, x, y, target=[xT, yT], extend_to=3, correct_edges=True, correct_edges_kwargs = dict(edges = ['start'])
             )
             k += 1
 
