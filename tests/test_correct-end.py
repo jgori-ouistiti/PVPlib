@@ -9,10 +9,6 @@ from pvplib import PVP_alpha, __version__
 
 
 
-def test_version():
-    assert __version__ == "0.3.2-dev0"
-
-
 def conv_time(time_str):
     time_format = '%H:%M:%S.%f'
     time_obj = datetime.strptime(time_str, time_format)
