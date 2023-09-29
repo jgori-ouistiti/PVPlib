@@ -380,6 +380,8 @@ class PVP:
             (time[indx:stp_index].reshape(1, -1), traj[indx:stp_index].reshape(1, -1)), axis=0
         )
         container = numpy.concatenate((container, speed[indx:stp_index].reshape(1, -1)), axis=0)
+
+
         return container, indx, stp_index
 
     def plot_kinematic_profiles(self, ax=None, **kwargs):
@@ -452,7 +454,6 @@ class PVP:
             _, indx, stp_indx = self._correct_edges(
                 tmp_container, **default_correct_edges_kwargs
             )
-        container = container[:, indx:stp_indx, :]
 
         self._extend(container[1, :, :], extend_to)
 

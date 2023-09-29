@@ -29,7 +29,7 @@ def PVP_1D_add_trajectory():
                     ):  # use both left-to-right and right-to-left movements without changing origin, hack for the PDdataset
                         x = [-_x for _x in x]
                     pvp.add_trajectory(
-                        t, x, target=[xT], extend_to=3, correct_edges=True
+                        t, x, target=[xT], extend_to=3, correct_edges=False
                     )
                 except NameError:  # t,x,y have not been defined yet
                     pass
