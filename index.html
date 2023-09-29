@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to PVPlib’s documentation! &mdash; PVPlib 0.3.2 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pvplib" href="_autosummary/pvplib.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            PVPlib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">See also</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">    Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/pvplib.html">    API reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">PVPlib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to PVPlib’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-pvplib-s-documentation">
+<h1>Welcome to PVPlib’s documentation!<a class="headerlink" href="#welcome-to-pvplib-s-documentation" title="Permalink to this heading"></a></h1>
+</section>
+<section id="project-description">
+<h1>Project description<a class="headerlink" href="#project-description" title="Permalink to this heading"></a></h1>
+<p>This library allows you to easily compute and plot PVPs in 1, 2 and 3 dimensions.
+The theory behind PVPs is explained in <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> and <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+</section>
+<section id="installing-pvplib">
+<h1>Installing PVPlib<a class="headerlink" href="#installing-pvplib" title="Permalink to this heading"></a></h1>
+<p>The library can be installed directly with pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pvplib
+</pre></div>
+</div>
+<p>Alternatively, you can also downlaod the source and build it using <a class="reference external" href="https://python-poetry.org/">poetry</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>install
+</pre></div>
+</div>
+</section>
+<section id="using-pvplib">
+<h1>Using PVPlib<a class="headerlink" href="#using-pvplib" title="Permalink to this heading"></a></h1>
+<p>There are three versions of PVPs (PVP alpha, PVP total and PVP generalized). You can simply initialize them with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pvplib</span> <span class="kn">import</span> <span class="n">PVP_alpha</span><span class="p">,</span> <span class="n">PVP_total</span><span class="p">,</span> <span class="n">PVP_generalized</span>
+<span class="n">pvp</span> <span class="o">=</span> <span class="n">PVP_alpha</span><span class="p">()</span>
+<span class="n">pvp</span> <span class="o">=</span> <span class="n">PVP_total</span><span class="p">()</span>
+<span class="n">pvp</span> <span class="o">=</span> <span class="n">PVP_generalized</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This produces a pvp object which you can populate with trajectories. For example, for a 2D trajectory with time series t, and position series x and y, where the target aimed toward is [xT, yT], you can write</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pvp</span><span class="o">.</span><span class="n">add_trajectory</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="p">[</span><span class="n">xT</span><span class="p">,</span> <span class="n">yT</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>These position series are preprocessed and projected on an orthonormal basis where the first basis vector is aligned with the origin-target direction. You can display trajectories on each projection with (2D example)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pvp</span><span class="o">.</span><span class="n">plot_kinematic_profiles</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="p">[</span><span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>You can compute the pvp profiles with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mean_profile</span><span class="p">,</span> <span class="n">pvp_profile</span> <span class="o">=</span> <span class="n">pvp</span><span class="o">.</span><span class="n">compute_profiles</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>and plot the results, together with the spline fit with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pvp</span><span class="o">.</span><span class="n">plot_std_profiles</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">fit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Gori, J., &amp; Rioul, O. (2020). A feedback information-theoretic transmission scheme (FITTS) for modeling trajectory variability in aimed movements. Biological Cybernetics, 114(6), 621-641.</p>
+</aside>
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Gori, J., and Bellut, Q. (2023, April, to appear). Positional Variance Profiles (PVPs): A New Take on the Speed-Accuracy Tradeoff. In Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems.</p>
+</aside>
+</aside>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">See also</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">    Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/pvplib.html">    API reference</a></li>
+</ul>
+</div>
+</section>
+<section id="known-caveats">
+<h1>Known Caveats<a class="headerlink" href="#known-caveats" title="Permalink to this heading"></a></h1>
+<p>Currently, the library only handles dimensions up to 3-D. The existing code is fully compatible with any N dimension, except for a single method. However, because it is unclear why an N &gt; 3 PVP would be useful, I haven’t generalized the method yet. You can open a feature request on GitHub if you need an N-D version.</p>
+</section>
+<section id="indices">
+<h1>Indices<a class="headerlink" href="#indices" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="_autosummary/pvplib.html" class="btn btn-neutral float-right" title="pvplib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anonymous.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

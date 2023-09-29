@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pvplib.core.PVP &mdash; PVPlib 0.3.0-dev0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pvplib.core.PVP_alpha" href="pvplib.core.PVP_alpha.html" />
+    <link rel="prev" title="pvplib.core.normalize" href="pvplib.core.normalize.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> PVPlib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">See also</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">    Home page</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="pvplib.html">    API reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pvplib.core.html">pvplib.core</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pvplib.core.normalize.html">pvplib.core.normalize</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">pvplib.core.PVP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pvplib.core.PVP"><code class="docutils literal notranslate"><span class="pre">PVP</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pvplib.core.PVP_alpha.html">pvplib.core.PVP_alpha</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pvplib.core.PVP_generalized.html">pvplib.core.PVP_generalized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pvplib.core.PVP_total.html">pvplib.core.PVP_total</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PVPlib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="pvplib.html">pvplib</a></li>
+          <li class="breadcrumb-item"><a href="pvplib.core.html">pvplib.core</a></li>
+      <li class="breadcrumb-item active">pvplib.core.PVP</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/pvplib.core.PVP.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pvplib-core-pvp">
+<h1>pvplib.core.PVP<a class="headerlink" href="#pvplib-core-pvp" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pvplib.core.PVP">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PVP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sampling_period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pvplib/core.html#PVP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pvplib.core.PVP" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pvplib.core.PVP.add_trajectory" title="pvplib.core.PVP.add_trajectory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_trajectory</span></code></a></p></td>
+<td><p>Add trajectory to the set from which PVPs are computed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pvplib.core.PVP.compute_profiles" title="pvplib.core.PVP.compute_profiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_profiles</span></code></a></p></td>
+<td><p>Computes the mean and standard deviation profiles for a set of trajectories.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pvplib.core.PVP.compute_pvp" title="pvplib.core.PVP.compute_pvp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_pvp</span></code></a></p></td>
+<td><p>Run the full PVP routine:</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pvplib.core.PVP.plot_kinematic_profiles" title="pvplib.core.PVP.plot_kinematic_profiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_kinematic_profiles</span></code></a></p></td>
+<td><p>Plots the kinematic profiles on the provided axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pvplib.core.PVP.plot_std_profiles" title="pvplib.core.PVP.plot_std_profiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_std_profiles</span></code></a></p></td>
+<td><p>Plots the standard deviation profiles on the provided axis.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">kinematic_profile</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pvp_params</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">timestamps</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="pvplib.core.PVP.add_trajectory">
+<span class="sig-name descname"><span class="pre">add_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend_to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">correct_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pvplib/core.html#PVP.add_trajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pvplib.core.PVP.add_trajectory" title="Permalink to this definition"></a></dt>
+<dd><p>Add trajectory to the set from which PVPs are computed</p>
+<p>Pass the time series, and any number of positional series. For example in dim3 with x, y, z, you would call (with defaults kwargs)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pvp</span><span class="o">.</span><span class="n">add_trajectory</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">extend_to</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">correct_start</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You control the duration of the PVP (e.g. how far in time trajectories are extended). You also need to specify the target location for each trajectory. You can optionally synchronize the trajectories by pre-processing them (correct_start). Currently, a simple thresholding rule takes care of this synchronization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> (<em>numpy.array like</em>) – time series</p></li>
+<li><p><strong>args</strong> (<em>numpy.array like</em>) – positional series</p></li>
+<li><p><strong>extend_to</strong> (<em>int</em><em>, </em><em>optional</em>) – minimal PVP duration, defaults to 3</p></li>
+<li><p><strong>target</strong> (<em>iterable</em><em>, </em><em>optional</em>) – target location, defaults to None. If None, will use the null vector as target.</p></li>
+<li><p><strong>correct_start</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to correct the location of the start of the movement for synchronization, defaults to False</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pvplib.core.PVP.compute_profiles">
+<span class="sig-name descname"><span class="pre">compute_profiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pvplib/core.html#PVP.compute_profiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pvplib.core.PVP.compute_profiles" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the mean and standard deviation profiles for a set of trajectories.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(mean profile, standard deviation profile)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple(array, array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pvplib.core.PVP.compute_pvp">
+<span class="sig-name descname"><span class="pre">compute_pvp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">remove_outliers_k_sigma_away</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pvplib/core.html#PVP.compute_pvp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pvplib.core.PVP.compute_pvp" title="Permalink to this definition"></a></dt>
+<dd><p>Run the full PVP routine:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>compute profiles</p></li>
+<li><p>remove outliers k sigma away</p></li>
+<li><p>fit profiles</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>remove_outliers_k_sigma_away</strong> (<em>float</em><em>, </em><em>optional</em>) – remove outliers k sigma away, defaults to 3.5</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>standard deviation profile, x and y values of the fit, kinematic profiles</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(array, array, array, array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pvplib.core.PVP.plot_kinematic_profiles">
+<span class="sig-name descname"><span class="pre">plot_kinematic_profiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pvplib/core.html#PVP.plot_kinematic_profiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pvplib.core.PVP.plot_kinematic_profiles" title="Permalink to this definition"></a></dt>
+<dd><p>Plots the kinematic profiles on the provided axis. If not provided, will create a new figure from scratch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ax</strong> (<em>plt.axis</em><em>, </em><em>optional</em>) – axis on which to draw, defaults to None. If None, creates a new figure and axis to draw on.</p></li>
+<li><p><strong>**kwargs</strong> – <p>keyword arguments are passed to plt.plot()</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pvplib.core.PVP.plot_std_profiles">
+<span class="sig-name descname"><span class="pre">plot_std_profiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prof_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pvplib/core.html#PVP.plot_std_profiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pvplib.core.PVP.plot_std_profiles" title="Permalink to this definition"></a></dt>
+<dd><p>Plots the standard deviation profiles on the provided axis. If not provided, will create a new figure from scratch.
+If fit is True, will also compute the spline fit to the second and third phase. Keyword arguments to the std plotter (prof_kwargs) and to the fit plotter (fit_kwargs) can also be given.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should have fitted the profiles prior to plotting them.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ax</strong> (<em>plt.axis</em><em>, </em><em>optional</em>) – axis on which to draw, defaults to None. If None, creates a new figure and axis to draw on.</p></li>
+<li><p><strong>fit</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to plot the spline fit, defaults to True</p></li>
+<li><p><strong>prof_kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – keyword arguments are passed to plotter for the standard deviation profile, defaults to None</p></li>
+<li><p><strong>fit_kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – keyword arguments are passed to plotter for the spline fit, defaults to None</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pvplib.core.normalize.html" class="btn btn-neutral float-left" title="pvplib.core.normalize" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pvplib.core.PVP_alpha.html" class="btn btn-neutral float-right" title="pvplib.core.PVP_alpha" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Anonymous.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
